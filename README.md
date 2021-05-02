@@ -1,31 +1,53 @@
 # IoT_Project_Self_Driving_Car
 
-Beschrijving: Mercedes benz wil zijn museum in Stuttgart automatiseren. Hiervoor willen ze een systeem, dat ervoor zorgt dat een bezoeker kan plaatsnemen in een zelfrijdende wagen. De bezoeker kan in het begin van de rondleiding gaan zitten in één van deze wagentjes en zal de hele toer van het museum doen. Op het einde van de toer stapt de bezoeker uit. Nadien rijd de wagen door naar het begin van de toer zodat een nieuwe bezoeker kan instappen. De route dat de wagentjes moeten volgen wordt vastgelegd met een witte tape op de vloer, dit maakt het mogelijk om de rondleiding aan te passen als er nieuwe stukken worden toegevoegd. Bij elk stuk zal op de route een witte dwarslijn worden geplaatst, hierdoor weet het wagentje daar een museum stuk tentoon wordt gesteld en dat het even moet stoppen. Als de bestuurder verder wil zal deze op een drukknop in het wagentje kunnen drukken waarna het wagentje doorrijdt naar het volgende item. Om opstopping te vermijden zal het wagentje automatisch na 5 minuten verder rijden. Optioneel willen ze de wagentjes ook vanop afstand bedienen, hiervoor zouden ze met een app de functie van de drukknop kunnen overnemen. Het is natuurlijk ook belangrijk dat de wagentjes niet botsen, hiervoor zal er tussen de wagentjes steeds een minimum afstand van 1,5m voorzien worden (Corona maatregel). Als een wagentje merkt dat het te dicht bij het voorgaande wagentje komt dient dit te stoppen en pas verder te rijden indien het voorgaande wagentje ook verder rijd. De wagentjes worden ook voorzien van led signalisatie. Met deze signalisatie kan het personeel in de controlekamer op camera’s zien als er zich een problemen voordoet. Een groene led zal branden indien er geen problemen zijn, een rode led zal branden indien het wagentje de lijn kwijt is. 
+Description Assignment
 
-Vereisten:
+Mercedes-Benz wants to automate its museum in Stuttgart. To do this, they want a system, which will allow a visitor to take a seat in a self-driving car. At the beginning of the tour, the visitor can take place in one of these cars that will drive around the entire museum. At the end, the visitor gets out and the trolley returns to the beginning of the tour so that new visitors can embark.
 
-De robot kan autonoom een parcour volgen dat wordt aangeduid d.m.v. een witte lijn.
-De robot dient te stoppen bij een witte dwarslijn en kan verder rijden als: o Debestuurderopdedoorrijdknopduwt o Het wagentje 5 minuten stil staat. o Optioneel: als het controle centrum het wagentje activeert met de app.
+The route that the cars have to follow is fixed with a white tape on the floor, which makes it possible to adapt the tour if new exhibits are added. At each exhibit, a transverse white line will cross the tour line, this way the car knows where a museum piece is exhibited and that it has to stop. If the driver wants to continue, he or she can press a push-button inside the car and the tour will continue to the next exhibited item. 
 
-De wagentjes mogen niet botsen o Indien er en wagentje stil staat zullen de achterliggende wagentjes afstand houden en pas doorrijden als het wagentje voor hen doorrijd.
-Indien er problemen voordoen met een wagentje zal dit noodgedwongen stoppen en dit doorgeven aan het controle centrum d.m.v. led signalisatie op het wagentje 
+To avoid congestion, the car will automatically continue the tour after 5 minutes.
+Optionally, they also want to operate the cars remotely, for which the Control Center could take over the function of the push-button with an app.
 
-Signalisatie bij problemen 
-▪ Groene led: Geen problemen 
-▪ Oranje led: obstakel (wagentje of andere) 
-▪ Rode led: Lijn kwijt 
+Of course it is also important that the cars do not collide, therefore there should always be a minimum distance of 1.5 meters between the trolleys (Corona measures). If a car detects that it is too close to the one in front, it must stop and only continue if the one in front also continues to drive.
 
-Wat verwacht Mercedes-Benz:
-o Een beknopte beschrijving van de gebruikte hardware 
-o Bestanden om de behuizing te produceren 
-o Elektronicacomponenten o Schema’senPCB
-o Gedocumenteerde code
-o Beknopte beschrijving hoe ze deze wagentjes zelf kunnen produceren 
-o Tutorial 
+The cars are also equipped with LEDs. Using this signalization, the staff present in the control room can check cameras should there be a problem. 
+•	A green LED will light up if there are no issues.
+•	A red LED will light up if the car has lost track of the white line.
+•	A orange LED will light up if the car detects an obstacle (other car or anything else in its path).
 
-Dit alles zal hen worden aangereikt d.m.v. een GitHub pagina. Opvolging: Mercedes-Benz wil de wagentjes na 7 weken in productie nemen, hiervoor zullen er 3 beoordelingen plaat vinden. 
+Requirements:
+•	The car can autonomously follow a track indicated by a white line.
+•	The car must stop at a white line and can only continue driving if:
+o	The driver pushes the drive-through push-button.
+o	The trolley has been stationary for 5 minutes.
+o	Optional: when the control center activates the car with their custom made application.
+•	The cars must not collide.
+o	If a car is halted, the cars behind it will keep their distance and only continue their route when the car in front of them continues its path.
+•	Should there occurre problems with a car, it will be forced to stop and inform the control center by means of LEDs mounted on the cars.
+o	Signalization in case of problems:
+	Green LED: No issues.
+	Orange LED: Obstacle (other car or anything else in its path).
+	Red led: car has lost track of the white line.
 
-o Op 3 weken tijd dient het wagentje te rijden en basis functionaliteit te hebben (lijn volgen). 
-o Na 5 weken willen ze zeker zijn dat de wagentjes over de correcte functies beschikt, Lijn volgen
-Stoppen en doorrijden bij dwarslijn - Signalisatie 
-o Na 7 weken zal er een werkend prototype getoond worden. Dit prototype zal getest worden op functionaliteit en snelheid. Het prototype mag geen losse componenten bevatten, het gebruik van een breadboard is dus niet toegelaten. Op dit moment dient ook alle documentatie te worden voorzien.
+What does Mercedes-Benz expect:
+•	A brief description of the used hardware.
+o	Files to produce the enclosure.
+o	Electronic components.
+o	Schematics and PCB (if applicable).
+•	Documented code.
+•	Brief description of to produce these cars themselves.
+o	Tutorial.
+All of this will be provided to them through a GitHub page.
+
+Follow-up:
+Mercedes-Benz wants to take the cars into production after 7 weeks, there will be 3 evaluations.
+
+In 3 weeks time the car should be driving and have basic functionality (line following). 
+
+In 5 weeks they want to be sure that the cars have the correct functions to :
+•	Follow the white line.
+•	Stop and continue at each transverse white line.
+•	Signalization.
+In 7 weeks a working prototype should be presented. This prototype will be tested for functionality and speed. The prototype may not contain any loose components, so the use of a breadboard is not allowed. At this time, all documentation should also have been provided.
+![Uploading image.png…]()
