@@ -50,4 +50,4 @@ In 5 weeks they want to be sure that the cars have the correct functions to :
 •	Stop and continue at each transverse white line.
 •	Signalization.
 In 7 weeks a working prototype should be presented. This prototype will be tested for functionality and speed. The prototype may not contain any loose components, so the use of a breadboard is not allowed. At this time, all documentation should also have been provided.
-![Uploading image.png…]()
+
