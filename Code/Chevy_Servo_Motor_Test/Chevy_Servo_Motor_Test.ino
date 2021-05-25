@@ -4,7 +4,7 @@ int servoPin = 3; // Port to control the servo Motor
 int servoPos; 
 // Start position of the Servo, stright wheels (only executed at begining)
 // Max. range right is 40° and max. range left is 130°
-int servoStartPos = 80;
+int servoStartPos = 85;
 String msg = "What angle for the Servo?";
 String msg2 = "The chosen angle is: ";
 String msg3 = "°";
@@ -31,7 +31,7 @@ void loop() {
   
   servoPos = Serial.parseInt();
   
-  if (servoPos < 40 || servoPos > 130){
+  if (servoPos < 65 || servoPos > 105){
     Serial.println("Angle should be a value in between 40° and 130°");
   }
   else{

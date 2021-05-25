@@ -73,7 +73,6 @@ void stop_car() {
   digitalWrite(IN2, LOW); // IN2 = 0
   digitalWrite(IN3, LOW); // IN3 = 0
   digitalWrite(IN4, LOW); // IN4 = 0
-  // delay(1000);
 }
 
 void forward(int car_speed){
@@ -88,6 +87,7 @@ void forward(int car_speed){
 
 
 void setup() {
+  
   Serial.begin(115200);
 
   /*
@@ -131,95 +131,100 @@ void setup() {
 
 void loop() {
 
-  
-  
   /*
-    Line Tracking: 0 is Black Line, 1 is no Black Line
+    Print Line Tracking Sensor State: 0 is Black Line, 1 is no Black Line
   */
-  Serial.print("LT_L: ");
-  Serial.print(digitalRead(LT_L));
-  Serial.print("  LT_M: ");
-  Serial.print(digitalRead(LT_M));
-  Serial.print("  LT_R: ");
-  Serial.println(digitalRead(LT_R));
+//  Serial.print("LT_L: ");
+//  Serial.print(digitalRead(LT_L));
+//  Serial.print("  LT_M: ");
+//  Serial.print(digitalRead(LT_M));
+//  Serial.print("  LT_R: ");
+//  Serial.println(digitalRead(LT_R));
 
   // If a Black Line is detected by the Left Sensor
-  if (digitalRead(LT_L) == 0 && digitalRead(LT_M) == 1 && digitalRead(LT_R) == 1) {
+  if (!(digitalRead(LT_L)) && digitalRead(LT_R)){ // Turn Left
+//  if (digitalRead(LT_L) == 0 && digitalRead(LT_R) == 1) {
     forward(CAR_SPEED);
-    if (oldServoPos == servoLeftmax) { // Case 1
-      myServo.write(servoLeftmax);
-    }
-    if (oldServoPos == servoCenterPos) { // Case 2
-      for (int i = oldServoPos ; i <= servoLeftmax ; i++) {
-        newServoPos = i;
-        myServo.write(newServoPos);
-        delay(ServoDelay);
-      }
-      oldServoPos = newServoPos;
-    }
-    if (oldServoPos == servoRightmax) { // Case 3
-      for (int i = oldServoPos ; i <= servoLeftmax ; i++) {
-        newServoPos = i;
-        myServo.write(newServoPos);
-        delay(ServoDelay);
-      }
-      oldServoPos = newServoPos;
-    }
+    myServo.write(servoLeftmax);
+//    if (oldServoPos == servoLeftmax) { // Case 1
+//      myServo.write(servoLeftmax);
+//    }
+//    if (oldServoPos == servoCenterPos) { // Case 2
+//      for (int i = oldServoPos ; i <= servoLeftmax ; i++) {
+//        newServoPos = i;
+//        myServo.write(newServoPos);
+//        delay(ServoDelay);
+//      }
+//      oldServoPos = newServoPos;
+//    }
+//    if (oldServoPos == servoRightmax) { // Case 3
+//      for (int i = oldServoPos ; i <= servoLeftmax ; i++) {
+//        newServoPos = i;
+//        myServo.write(newServoPos);
+//        delay(ServoDelay);
+//      }
+//      oldServoPos = newServoPos;
+//    }
   }
   // If a Black Line is detected by the Right Sensor
-  if (digitalRead(LT_L) == 1 && digitalRead(LT_M) == 1 && digitalRead(LT_R) == 0){
+  if (digitalRead(LT_L) && !(digitalRead(LT_R))){ // Turn Right
+//  if (digitalRead(LT_L) == 1 && digitalRead(LT_M) == 1 && digitalRead(LT_R) == 0){
     forward(CAR_SPEED);
-    if (oldServoPos == servoRightmax) { // Case 1
-      myServo.write(servoRightmax);
-    }
-    if (oldServoPos == servoCenterPos) { // Case 2
-      for (int i = oldServoPos ; i >= servoRightmax ; i--) {
-        newServoPos = i;
-        myServo.write(newServoPos);
-        delay(ServoDelay);
-      }
-      oldServoPos = newServoPos;
-    }
-    if (oldServoPos == servoLeftmax) { // Case 3
-      for (int i = oldServoPos ; i >= servoRightmax ; i--) {
-        newServoPos = i;
-        myServo.write(newServoPos);
-        delay(ServoDelay);
-      }
-      oldServoPos = newServoPos;
-    }
+    myServo.write(servoRightmax);
+//    if (oldServoPos == servoRightmax) { // Case 1
+//      myServo.write(servoRightmax);
+//    }
+//    if (oldServoPos == servoCenterPos) { // Case 2
+//      for (int i = oldServoPos ; i >= servoRightmax ; i--) {
+//        newServoPos = i;
+//        myServo.write(newServoPos);
+//        delay(ServoDelay);
+//      }
+//      oldServoPos = newServoPos;
+//    }
+//    if (oldServoPos == servoLeftmax) { // Case 3
+//      for (int i = oldServoPos ; i >= servoRightmax ; i--) {
+//        newServoPos = i;
+//        myServo.write(newServoPos);
+//        delay(ServoDelay);
+//      }
+//      oldServoPos = newServoPos;
+//    }
   }
-  // If a Black Line is detected by the middle Sensor
-  if (digitalRead(LT_L) == 1 && digitalRead(LT_M) == 0 && digitalRead(LT_R) == 1) {
+  if (digitalRead(LT_L) && digitalRead(LT_R)){ // Drive Forward
+//  if (digitalRead(LT_L) == 1 && digitalRead(LT_M) == 0 && digitalRead(LT_R) == 1) {
     forward(CAR_SPEED);
-    if (oldServoPos == servoCenterPos) { // Case 1
-      myServo.write(servoCenterPos);
-    }
-    if (oldServoPos > servoCenterPos) { // Case 2
-      for (int i = oldServoPos ; i >= servoCenterPos ; i--) {
-        newServoPos = i;
-        myServo.write(newServoPos);
-        delay(ServoDelay);
-      }
-      oldServoPos = newServoPos;
-    }
-    if (oldServoPos < servoCenterPos) { // Case 3
-      for (int i = oldServoPos ; i <= servoCenterPos ; i++) {
-        newServoPos = i;
-        myServo.write(newServoPos);
-        delay(ServoDelay);
-      }
-      oldServoPos = newServoPos;
-    }
+    myServo.write(servoCenterPos);
+//    if (oldServoPos == servoCenterPos) { // Case 1
+//      myServo.write(servoCenterPos);
+//    }
+//    if (oldServoPos > servoCenterPos) { // Case 2
+//      for (int i = oldServoPos ; i >= servoCenterPos ; i--) {
+//        newServoPos = i;
+//        myServo.write(newServoPos);
+//        delay(ServoDelay);
+//      }
+//      oldServoPos = newServoPos;
+//    }
+//    if (oldServoPos < servoCenterPos) { // Case 3
+//      for (int i = oldServoPos ; i <= servoCenterPos ; i++) {
+//        newServoPos = i;
+//        myServo.write(newServoPos);
+//        delay(ServoDelay);
+//      }
+//      oldServoPos = newServoPos;
+//    }
   }
-  // In all other cases, STOP the car
-//  else {
-//    stop_car();
-//  }
-  
-  Serial.print("oldServoPos = ");
-  Serial.print(oldServoPos);
-  Serial.print("  newServoPos = ");
-  Serial.println(newServoPos);
-  delay(500);
+  // If black perpendicualr line is detected
+  if (!(digitalRead(LT_L)) && !(digitalRead(LT_M)) && !(digitalRead(LT_R))){ // Stop Car
+    myServo.write(servoCenterPos);
+    stop_car();
+  }
+
+  // Print Servo State
+//  Serial.print("oldServoPos = ");
+//  Serial.print(oldServoPos);
+//  Serial.print("  newServoPos = ");
+//  Serial.println(newServoPos);
+//  delay(500);
 }

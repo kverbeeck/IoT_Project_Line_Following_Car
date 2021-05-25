@@ -29,11 +29,11 @@
 int servoPin = 3; // Port to control the servo Motor
 // Start position of the Servo, stright wheels (only executed at begining)
 // Max. range right is 30° and max. range left is 130°
-int servoCenterPos = 80;
-int servoLeftmax = 130;
-int servoRightmax = 30;
-int oldServoPos = 80;
-int newServoPos= 80;
+int servoCenterPos = 85;
+int servoLeftmax = 105;
+int servoRightmax = 65;
+int oldServoPos = 85;
+int newServoPos= 85;
 
 Servo myServo; // Create a virtual object into your Arduino so you can interact with it.
 // Also give it a name (myServo).
