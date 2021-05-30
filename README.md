@@ -1,6 +1,8 @@
 # IoT_Project_Self_Driving_Car
 
-YouTube Video: https://www.youtube.com/watch?v=AkNlcWbXoIE
+YouTube Video - Evaluation Week 5:  https://www.youtube.com/watch?v=Afq3bGS6EhM
+YouTube Video - Evaluation Week 3: https://www.youtube.com/watch?v=AkNlcWbXoIE
+
 
 Description Assignment
 
