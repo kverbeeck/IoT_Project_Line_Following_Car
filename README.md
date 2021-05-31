@@ -34,7 +34,7 @@ o	Signalization in case of problems:
 	Orange LED: Obstacle (other car or anything else in its path).
 	Red led: car has lost track of the white line.
 
-What does Mercedes-Benz expect:
+## What does Mercedes-Benz expect
 •	A brief description of the used hardware.
 o	Files to produce the enclosure.
 o	Electronic components.
@@ -44,7 +44,7 @@ o	Schematics and PCB (if applicable).
 o	Tutorial.
 All of this will be provided to them through a GitHub page.
 
-Follow-up:
+## Follow-up:
 Mercedes-Benz wants to take the cars into production after 7 weeks, there will be 3 evaluations.
 
 In 3 weeks time the car should be driving and have basic functionality (line following). 
