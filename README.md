@@ -4,7 +4,7 @@ YouTube Video - Evaluation Week 5:  https://www.youtube.com/watch?v=Afq3bGS6EhM
 YouTube Video - Evaluation Week 3: https://www.youtube.com/watch?v=AkNlcWbXoIE
 
 
-Description Assignment
+## Description Assignment
 
 Mercedes-Benz wants to automate its museum in Stuttgart. To do this, they want a system, which will allow a visitor to take a seat in a self-driving car. At the beginning of the tour, the visitor can take place in one of these cars that will drive around the entire museum. At the end, the visitor gets out and the trolley returns to the beginning of the tour so that new visitors can embark.
 
@@ -20,7 +20,7 @@ The cars are also equipped with LEDs. Using this signalization, the staff presen
 •	A red LED will light up if the car has lost track of the white line.
 •	A orange LED will light up if the car detects an obstacle (other car or anything else in its path).
 
-Requirements:
+## Requirements:
 •	The car can autonomously follow a track indicated by a white line.
 •	The car must stop at a white line and can only continue driving if:
 o	The driver pushes the drive-through push-button.
